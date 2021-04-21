@@ -78,7 +78,7 @@ sudo su
 ```bash
 kubectl get nodes
 ```
-## use this command to join the cluster,the token will be different in your cluster (use your token),type this on worker node:
+## use this command so the worker node can join the cluster,the token will be different in your cluster (use your token),type this on worker node:
 ```bash
 kubeadm join 192.168.100.208:6443 --token 4niztf.rc6y0xfbnih81jxv \
         --discovery-token-ca-cert-hash sha256:b44d3ac51430f7e7dad4639e4a8eeb5f3f03769ed8319c26e437ff49915659d7
