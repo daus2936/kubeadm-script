@@ -13,29 +13,29 @@ yum -y update
 yum -y install git
 ```
 
-## edit hostname on master node and change the name to master
+## Edit hostname on master node and change the name to master
 ```bash
 sudo su
 vi /etc/hostname
 ```
 
-## edit hostname on worker node and change the name to worker
+## Edit hostname on worker node and change the name to worker
 ```bash
 sudo su
 vi /etc/hostname
 ```
 
-## add known host on master node and worker node (Use your IP)
+## Add known host on master node and worker node (Use your IP)
 ```bash
 vi /etc/hosts
 ```
-## add this to /etc/hosts of master node and worker node
+## Add this to /etc/hosts of master node and worker node
 ```bash
 192.168.100.208 master
 192.168.100.209 worker
 ```
 
-## make the system to sudo without password so when script is running the script is not asking for the password (master node)
+## Make the system to sudo without password so when script is running the script is not asking for the password (master node)
 ```bash
 sudo su
 sudo visudo
@@ -53,7 +53,7 @@ sudo reboot now
 sudo su
 git clone https://github.com/daus2936/kubeadm-script.git
 ```
-## give execute permission to the script file on master node and worker node
+## Give execute permission to the script file on master node and worker node
 ```bash
 cd kubeadm-script
 chmod +x ccluster.sh kubernetes.sh variable.sh
@@ -78,7 +78,7 @@ sudo su
 ```bash
 kubectl get nodes
 ```
-## use this command so the worker node can join the cluster,the token will be different in your cluster (use your token),type this on worker node:
+## Use this command so the worker node can join the cluster,the token will be different in your cluster (use your token),type this on worker node:
 ```bash
 kubeadm join 192.168.100.208:6443 --token 4niztf.rc6y0xfbnih81jxv \
         --discovery-token-ca-cert-hash sha256:b44d3ac51430f7e7dad4639e4a8eeb5f3f03769ed8319c26e437ff49915659d7
