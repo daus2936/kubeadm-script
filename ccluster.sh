@@ -6,6 +6,10 @@ source variable.sh
 
 #create cluster
 
+service docker restart
+
+kubeadm config images pull
+
 kubeadm init --pod-network-cidr=$NETWORK_CIDR  --apiserver-advertise-address=$MASTER_IP
 
 su - $USERNAME <<EOF
