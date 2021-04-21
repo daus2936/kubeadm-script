@@ -6,6 +6,15 @@ source variable.sh
 
 #create cluster
 
+cat <<EOF >> /etc/docker/daemon.json
+
+{
+      "registry-mirrors": ["https://registry.dockercn.com","https://mj9kvemk.mirror.aliyuncs.com"]
+}
+EOF
+
+service docker restart
+
 kubeadm config images pull
 
 kubeadm init --pod-network-cidr=$NETWORK_CIDR  --apiserver-advertise-address=$MASTER_IP
