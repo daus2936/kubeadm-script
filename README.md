@@ -68,7 +68,7 @@ vi variable.sh
 sudo su
 ./kubernetes.sh
 ```
-## Create kubernetes cluster,run ccluster.sh on master node (Run it as root)
+## After the script of kubernetes.sh is finish,create kubernetes cluster,run ccluster.sh on master node (Run it as root)
 ```bash
 sudo su
 ./ccluster.sh
