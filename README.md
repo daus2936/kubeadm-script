@@ -35,7 +35,7 @@ vi /etc/hosts
 192.168.100.209 worker
 ```
 
-## Make the system to sudo without password so when script is running the script is not asking for the password (master node)
+## Make the system to sudo without password so when script is running, the script is not asking for the password (master node)
 ```bash
 sudo su
 sudo visudo
