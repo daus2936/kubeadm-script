@@ -75,4 +75,3 @@ EOF
 
 service docker restart
 
-kubeadm config images pull
