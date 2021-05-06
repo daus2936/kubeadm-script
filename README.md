@@ -56,19 +56,33 @@ git clone https://github.com/daus2936/kubeadm-script.git
 ## Give execute permission to the script file on master node and worker node
 ```bash
 cd kubeadm-script
-chmod +x ccluster.sh kubernetes.sh variable.sh
+chmod +x ccluster.sh kubernetes.sh variable.sh docker.sh
 ```
+
 ## Edit the variable,change the the variable of MASTER_IP to your master node IP address,and make sure to change the other variable (Master node)
 ```bash
 sudo su
 vi variable.sh
 ```
-## Run kubernetes.sh on master node and worker node (Run it as root)
+
+## Install docker with docker.sh (master node and worker node)
+```bash
+sudo su
+./docker.sh
+```
+
+## After the script of docker.sh is finish,login to docker hub (master node and worker node)
+```bash
+docker login
+```
+
+## After login to dockerhub,run kubernetes.sh script (master node and worker node)
 ```bash
 sudo su
 ./kubernetes.sh
 ```
-## After the script of kubernetes.sh is finish,create kubernetes cluster,run ccluster.sh on master node (Run it as root)
+
+## After the script of kubernetes.sh is finish,create kubernetes cluster,run ccluster.sh on master node (Run it as root) (master node)
 ```bash
 sudo su
 ./ccluster.sh
