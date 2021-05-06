@@ -61,7 +61,7 @@ sudo su
 vi variable.sh
 ```
 
-## Install docker with docker.sh (master node and worker node)
+## Install docker with docker.sh (Run it as root) (master node and worker node)
 ```bash
 sudo su
 ./docker.sh
@@ -72,7 +72,7 @@ sudo su
 docker login
 ```
 
-## After login to dockerhub,run kubernetes.sh script (master node and worker node)
+## After login to dockerhub,run kubernetes.sh script (Run it as root) (master node and worker node)
 ```bash
 sudo su
 ./kubernetes.sh
