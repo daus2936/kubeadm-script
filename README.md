@@ -44,10 +44,6 @@ sudo visudo
 ```bash
 centos  ALL=(ALL) NOPASSWD:ALL
 ```
-## Reboot master node and worker node
-```bash
-sudo reboot now
-```
 ## Clone the repository on master node and worker node
 ```bash
 sudo su
