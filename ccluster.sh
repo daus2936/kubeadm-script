@@ -6,14 +6,6 @@ source variable.sh
 
 #create cluster
 
-cat <<EOF >> /etc/docker/daemon.json
-
-{
-      "registry-mirrors": ["https://registry.dockercn.com","https://mj9kvemk.mirror.aliyuncs.com"]
-}
-EOF
-
-service docker restart
 
 kubeadm config images pull
 
@@ -26,4 +18,4 @@ EOF
 
 sudo chown $USERNAME:$USERNAME $HOME/.kube/config
 
-kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
+kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml

@@ -66,3 +66,13 @@ sudo yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
 
 sudo systemctl enable --now kubelet
 
+cat <<EOF >> /etc/docker/daemon.json
+
+{
+      "registry-mirrors": ["https://registry.dockercn.com","https://mj9kvemk.mirror.aliyuncs.com"]
+}
+EOF
+
+service docker restart
+
+kubeadm config images pull
